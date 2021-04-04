@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import AppGQLClient from "./App.gql";
+import AppAlert from "./App.alerts";
+import { Home } from "./components";
+import { CssBaseline } from "@material-ui/core";
+import AppDialog from "./App.dailog";
+import AppBackdrop from "./App.backdrop";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppGQLClient>
+      <CssBaseline />
+      <AppAlert>
+        <AppDialog>
+          <AppBackdrop>
+            <Home />
+          </AppBackdrop>
+        </AppDialog>
+      </AppAlert>
+    </AppGQLClient>
   );
 }
 
